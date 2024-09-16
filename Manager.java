@@ -3,6 +3,9 @@ class Manager extends Employee {
 
         public Manager(String name, int employeeId, double salary, int teamSize) {
             super(name, employeeId, salary);
+            if (teamSize < 0) {
+                throw new IllegalArgumentException("Team size cannot be negative.");
+            }
         this.teamSize = teamSize;
     }
 

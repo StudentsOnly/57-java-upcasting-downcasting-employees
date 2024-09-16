@@ -3,6 +3,9 @@ class Engineer extends Employee {
 
       public Engineer(String name, int employeeId, double salary, String programmingLanguage) {
         super(name, employeeId, salary);
+          if (programmingLanguage == null || programmingLanguage.trim().isEmpty()) {
+              throw new IllegalArgumentException("Programming language cannot be null or empty.");
+          }
         this.programmingLanguage = programmingLanguage;
     }
 

@@ -5,6 +5,15 @@ abstract class Employee {
     String position;
 
        public Employee(String name, int employeeId, double salary) {
+           if (name == null || name.trim().isEmpty()) {
+               throw new IllegalArgumentException("Name cannot be null or empty.");
+           }
+           if (employeeId <= 0) {
+               throw new IllegalArgumentException("Employee ID must be positive.");
+           }
+           if (salary < 0) {
+               throw new IllegalArgumentException("Salary cannot be negative.");
+           }
         this.name = name;
         this.employeeId = employeeId;
         this.salary = salary;

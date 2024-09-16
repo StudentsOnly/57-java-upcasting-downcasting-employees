@@ -3,6 +3,10 @@ class Intern extends Employee {
 
     public Intern(String name, int employeeId, double salary, int durationInWeeks) {
         super(name, employeeId, salary);
+
+        if (durationInWeeks <= 0) {
+            throw new IllegalArgumentException("Duration in weeks must be greater than 0.");
+        }
         this.durationInWeeks = durationInWeeks;
     }
 
